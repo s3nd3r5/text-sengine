@@ -13,20 +13,25 @@ public:
 		int x = 0;
 		if (stream.is_open()){
 			while (!stream.eof()){
-				vector<string> inner;
 				getline(stream, LINE);
 				//0 1 e1 0 5 t31 0
-				LINE = trim(LINE)+SPACE;
-				while (isNotBlank(LINE)){
-					string item = lsplit(LINE,SPACE);
-					inner.push_back(item);
-					LINE = rsplit(LINE,SPACE);
-				}
+				if(isComment(LINE) || isBlank(LINE)) continue;
+				LINE = removeComment(LINE);
+				vector<string> inner = splitOnDeliminator(LINE,SPACE);
 				_map->push_back(inner);
 			}
 		}
 		stream.close();
 		return _map;
+	}
+	
+	string removeComment(string line){
+		if(line.find(COMMENT) != -1) return lsplit(line,COMMENT);
+		return line;
+		
+	}
+	bool isComment(string str){
+		return trim(str).find(COMMENT) == 0;
 	}
 
 };
