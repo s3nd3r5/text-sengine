@@ -58,3 +58,17 @@ static bool isBlank(string str){
 static bool isNotBlank(string str){
 	return !isBlank(str);
 }
+
+static vector<string> splitOnDeliminator(string str, char deliminator){
+    str = trim(str);
+    int index = str.find(deliminator);
+    vector<string> tokens;
+    while(index != -1){
+        string token = lsplit(str,deliminator);
+        tokens.push_back(token);
+        str = trim(str.substr(index + 1));
+        index = str.find(deliminator);
+    }
+    if(str.length() > 0) tokens.push_back(str);
+    return tokens;
+}
