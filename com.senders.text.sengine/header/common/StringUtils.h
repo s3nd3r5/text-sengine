@@ -4,6 +4,7 @@ using namespace std;
 using std::string;
 static const string EMPTY = "";
 static const char SPACE = ' ';
+static const char COMMENT = ';';
 static string ltrim(string str){
 	if (EMPTY == str) return EMPTY;
 	int end_of_spaces = -1;
