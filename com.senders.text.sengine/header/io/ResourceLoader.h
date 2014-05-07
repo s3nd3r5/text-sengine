@@ -17,7 +17,7 @@ public:
 				//0 1 e1 0 5 t31 0
 				if(isComment(LINE) || isBlank(LINE)) continue;
 				LINE = removeComment(LINE);
-				vector<string> inner = splitOnDeliminator(LINE,SPACE);
+				vector<string> inner = tokenize(LINE,SPACE);
 				_map->push_back(inner);
 			}
 		}

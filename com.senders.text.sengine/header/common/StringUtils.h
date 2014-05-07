@@ -60,7 +60,7 @@ static bool isNotBlank(string str){
 	return !isBlank(str);
 }
 
-static vector<string> splitOnDeliminator(string str, char deliminator){
+static vector<string> tokenize(string str, char deliminator){
     str = trim(str);
     int index = str.find(deliminator);
     vector<string> tokens;
