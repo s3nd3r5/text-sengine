@@ -1,5 +1,6 @@
 #pragma once
 #include "common\includes.h"
+#include "common\Properties.h"
 #include "common\Map.h"
 class ResourceLoader{
 public:
@@ -24,7 +25,26 @@ public:
 		stream.close();
 		return _map;
 	}
-	
+	Properties* createProperties(string path){
+		Properties* props = new Properties();
+		ifstream stream;
+		stream.open(path);
+		string LINE;
+		int x = 0;
+		if (stream.is_open()){
+			while (!stream.eof()){
+				getline(stream, LINE);
+				if (isComment(LINE) || isBlank(LINE)) continue;
+				LINE = removeComment(LINE);
+				vector<string> inner = tokenize(LINE, SPACE);
+				props->setProperty(inner.at(0), inner.at(1));
+			}
+		}
+
+		return props;
+	}
+
+
 	string removeComment(string line){
 		if(line.find(COMMENT) != -1) return lsplit(line,COMMENT);
 		return line;

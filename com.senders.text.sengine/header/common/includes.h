@@ -1,12 +1,11 @@
 #pragma once
-#include <stdio.h>
-#include <iostream>
 #include <time.h>
 #include <string>
 #include <sstream>
 #include <fstream>
 #include <vector>
 #include <map>
+#include "io\printer.h"
 #include "common\StringUtils.h"
 using namespace std;
 using std::string;

@@ -18,7 +18,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -40,6 +40,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)out\</OutDir>
+    <IncludePath>C:\Users\stephen\programming\cpp\text-sengine\com.senders.text.sengine\header;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -70,12 +71,16 @@
     <ClInclude Include="header\common\includes.h" />
     <ClInclude Include="header\common\Map.h" />
     <ClInclude Include="header\common\Point.h" />
+    <ClInclude Include="header\game\API.h" />
+    <ClInclude Include="header\game\Game.h" />
+    <ClInclude Include="header\io\Params.h" />
+    <ClInclude Include="header\io\printer.h" />
     <ClInclude Include="header\common\Properties.h" />
     <ClInclude Include="header\common\StringUtils.h" />
     <ClInclude Include="header\io\ResourceLoader.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Test.cpp" />
+    <ClCompile Include="source\Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
