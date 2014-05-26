@@ -16,9 +16,5 @@ int main(int argc, char* argv[]){
 	Game* game = new Game(argv[1],loader);
 
 
-
-
-
-
-	return 0;
+	return 1;
 }

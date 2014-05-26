@@ -61,15 +61,22 @@ static bool isNotBlank(string str){
 }
 
 static vector<string> tokenize(string str, char deliminator){
-    str = trim(str);
-    int index = str.find(deliminator);
-    vector<string> tokens;
-    while(index != -1){
-        string token = lsplit(str,deliminator);
-        tokens.push_back(token);
-        str = trim(str.substr(index + 1));
-        index = str.find(deliminator);
-    }
-    if(str.length() > 0) tokens.push_back(str);
-    return tokens;
+	str = trim(str);
+	int index = str.find(deliminator);
+	vector<string> tokens;
+	while (index != -1){
+		string token = lsplit(str, deliminator);
+		tokens.push_back(token);
+		str = trim(str.substr(index + 1));
+		index = str.find(deliminator);
+	}
+	if (str.length() > 0) tokens.push_back(str);
+	return tokens;
+}
+
+static bool is_number(string str){
+	for (int i = 0; i < str.length(); i++){
+		if (!isdigit(str[i])) return false;
+	}
+	return true;
 }

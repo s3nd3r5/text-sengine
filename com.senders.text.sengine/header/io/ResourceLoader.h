@@ -15,16 +15,28 @@ public:
 		if (stream.is_open()){
 			while (!stream.eof()){
 				getline(stream, LINE);
-				//0 1 e1 0 5 t31 0
+				
+				//Check if we use it?
 				if(isComment(LINE) || isBlank(LINE)) continue;
+				
+				//Clean string
 				LINE = removeComment(LINE);
+				
+				//Break apart
 				vector<string> inner = tokenize(LINE,SPACE);
+				
+				//Push into map
 				_map->push_back(inner);
 			}
 		}
+
+		//close the stream
 		stream.close();
+
+		//return our map object
 		return _map;
 	}
+
 	Properties* createProperties(string path){
 		Properties* props = new Properties();
 		ifstream stream;
@@ -36,8 +48,16 @@ public:
 				getline(stream, LINE);
 				if (isComment(LINE) || isBlank(LINE)) continue;
 				LINE = removeComment(LINE);
+				
 				vector<string> inner = tokenize(LINE, SPACE);
-				props->setProperty(inner.at(0), inner.at(1));
+				
+				string value = inner.at(1);
+				string key = inner.at(0);
+				
+				if (is_number(value)){ props->setProperty(key, atoi(value.c_str())); }
+				else if (value == "true"){ props->setProperty(key, true); }
+				else if (value == "false"){ props->setProperty(key, false); }
+				else props->setProperty(key, value);
 			}
 		}
 

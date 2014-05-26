@@ -11,15 +11,17 @@ public:
 		Properties* p = loader->createProperties(gameFile);
 		TITLE = p->getString(API.TITLE);
 		startingLevel = p->getString(API.STARTING_LEVEL);
-		_globalProperties = loader->createProperties(API.GLOBAL_DEFS);
+		_globalProperties = loader->createProperties(p->getString(API.GLOBAL_DEFS));
 		delete p;
 	}
 	~Game(){
 		
 	}
 
+
 private:
 	string TITLE;
 	string startingLevel;
 	Properties* _globalProperties;
+	map<string, string> levels;
 };
