@@ -45,6 +45,9 @@
     <ClInclude Include="header\game\API.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="header\game\Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Main.cpp">

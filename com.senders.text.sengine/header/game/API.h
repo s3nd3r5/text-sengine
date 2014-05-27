@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 using std::string;
-struct API{
+struct API_CALLS{
 	//General Defs
 	const string TITLE = "TITLE";
 	const string STARTING_LEVEL = "STARTING_LEVEL";
@@ -27,4 +27,7 @@ struct API{
 	const string CHARACTER_RIGHT = "CHARACTER_RIGHT";
 	const string CHARACTER_UP = "CHARACTER_UP";
 	const string CHARACTER_DOWN = "CHARACTER_DOWN";
+
+	//Level stuffs
+	const string MAP = "MAP";
 } API;
