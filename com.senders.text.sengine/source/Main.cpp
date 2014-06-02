@@ -1,6 +1,6 @@
 #include "common/includes.h"
 #include "io/Params.h"
-#include "game/Game.h";
+#include "game/Game.h"
 
 
 int main(int argc, char* argv[]){
@@ -15,6 +15,8 @@ int main(int argc, char* argv[]){
 	ResourceLoader* loader = new ResourceLoader();
 	Game* game = new Game(argv[1],loader);
 
-
+	delete params;
+	delete loader;
+	delete game;
 	return 1;
 }

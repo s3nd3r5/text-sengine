@@ -1,4 +1,3 @@
-#pragma once
 #include "common\includes.h"
 #include "common\Properties.h"
 #include "io\ResourceLoader.h"

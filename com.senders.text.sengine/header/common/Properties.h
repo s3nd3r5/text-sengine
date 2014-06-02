@@ -1,6 +1,8 @@
 #pragma once
 #include "common\includes.h"
+
 class Properties{
+
 private:
 	map<string, int> integer_properties;
 	map<string, double> double_properties;

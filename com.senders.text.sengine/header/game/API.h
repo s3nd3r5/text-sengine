@@ -1,7 +1,4 @@
-#pragma once
-
 #include <string>
-using namespace std;
 using std::string;
 struct API_CALLS{
 	//General Defs

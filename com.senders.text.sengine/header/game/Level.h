@@ -1,4 +1,3 @@
-#pragma once
 #include "common/includes.h"
 #include "io/ResourceLoader.h"
 #include "common/Map.h"

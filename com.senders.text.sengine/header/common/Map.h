@@ -1,7 +1,8 @@
-#pragma once
 #include "common\includes.h"
-#include "common\Point.h";
+#include "common\Point.h"
+
 typedef vector<vector<string>> MAP;
+
 class Map{
 private:
 	 MAP* _map;

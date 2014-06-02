@@ -1,14 +1,15 @@
 #pragma once
 #include <string>
-using namespace std;
+#include <vector>
 using std::string;
+using std::vector;
 static const string EMPTY = "";
 static const char SPACE = ' ';
 static const char COMMENT = ';';
 static string ltrim(string str){
 	if (EMPTY == str) return EMPTY;
 	int end_of_spaces = -1;
-	for (int i = 0; i < str.length(); i++){
+	for (unsigned int i = 0; i < str.length(); i++){
 		char c = str[i];
 		if (isspace(c)){
 			end_of_spaces++;
@@ -17,15 +18,15 @@ static string ltrim(string str){
 			break;
 		}
 	}
-	if (end_of_spaces < 0) return str;
-	else if (end_of_spaces + 1 >= str.length()) return EMPTY;
+	if (end_of_spaces < 0u) return str;
+	else if (end_of_spaces + 1u >= str.length()) return EMPTY;
 	return str.substr(end_of_spaces + 1);
 }
 
 static string rtrim(string str){
 	if (EMPTY == str) return EMPTY;
 	int end_of_spaces = str.length();
-	for (int i = str.length()-1; i >= 0; i--){
+	for (unsigned int i = str.length()-1; i >= 0; i--){
 		char c = str[i];
 		if (isspace(c)){
 			end_of_spaces--;
@@ -34,7 +35,7 @@ static string rtrim(string str){
 			break;
 		}
 	}
-	if (0 > end_of_spaces) return str;
+	if (0u > end_of_spaces) return str;
 	else if (end_of_spaces == 0) return EMPTY;
 	return str.substr(0,end_of_spaces);
 }
@@ -75,7 +76,7 @@ static vector<string> tokenize(string str, char deliminator){
 }
 
 static bool is_number(string str){
-	for (int i = 0; i < str.length(); i++){
+	for (unsigned int i = 0; i < str.length(); i++){
 		if (!isdigit(str[i])) return false;
 	}
 	return true;

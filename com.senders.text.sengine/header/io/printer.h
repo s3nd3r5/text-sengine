@@ -1,7 +1,7 @@
-#pragma once
 #include <stdio.h>
 #include <iostream>
-using namespace std;
+using std::cout;
+using std::endl;
 bool DEBUG = false;
 
 void setDebug(bool d){

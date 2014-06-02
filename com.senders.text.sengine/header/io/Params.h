@@ -1,4 +1,3 @@
-#pragma once
 #include "common\includes.h"
 #define DEBUG 'd'
 class Params{

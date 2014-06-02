@@ -8,12 +8,12 @@
 #include <map>
 #include "io\printer.h"
 #include "common\StringUtils.h"
-using namespace std;
 using std::string;
 using std::vector;
 using std::ifstream;
 using std::map;
 using std::pair;
+using std::ostringstream;
 
 enum DIRECTION{ UP, DOWN, LEFT, RIGHT, BAD };
 string dirStr(DIRECTION dir){
